@@ -1,0 +1,11 @@
+<div class="container">
+  <h2>yeni kategori oluştur</h2>
+
+  <form #form="ngForm" (ngSubmit)="create()">
+    <label>kategori adı</label>
+    <input type="text" name="name" [(ngModel)]="category.name" class="form-control" required />
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+  </form>
+</div>
+
+
