@@ -10,16 +10,16 @@ import { Router } from '@angular/router';
   styleUrl: './create-category.css',
 })
 export class CreateCategory {
-  private categoryService=inject(CategoryService)
-  private router=inject(Router)
-category:CategoryModel=new CategoryModel();
+  private categoryService = inject(CategoryService);
+  private router = inject(Router);
+  category: CategoryModel = new CategoryModel();
 
-create(){
-  this.categoryService.create(this.category).subscribe({
-    next: data=>{
-        this.router.navigate(['/admin/category'])
-    },
-    error:err=>console.log(err)
-  })
-}
+  create() {
+    this.categoryService.create(this.category).subscribe({
+      next: (data) => {
+        this.router.navigate(['/admin/category']);
+      },
+      error: (err) => console.log(err),
+    });
+  }
 }
