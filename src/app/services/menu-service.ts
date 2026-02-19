@@ -14,7 +14,7 @@ export class MenuService {
   }
 
   getById(id:number){
-    return this.http.get<MenuModel>(this.apiUrl+'/'+id)
+    return this.http.get<MenuModel>(this.apiUrl+id)
   }
 
   create(model:MenuModel){
@@ -22,7 +22,7 @@ export class MenuService {
   }
 
   update(id:number,model:MenuModel){
-    return this.http.put(this.apiUrl+'/'+id,model);
+    return this.http.put(this.apiUrl+id,model);
   }
 
   delete(id:number){

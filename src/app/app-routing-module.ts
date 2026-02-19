@@ -1,3 +1,4 @@
+import { UpdateMenu } from './admin-components/menu/update-menu/update-menu';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Home } from './ui-components/home/home';
@@ -9,6 +10,7 @@ import { Menu } from './admin-components/menu/menu';
 import { About } from './admin-components/about/about';
 import { CreateCategory } from './admin-components/category/create-category/create-category';
 import { UpdateCategory } from './admin-components/category/update-category/update-category';
+import { CreateMenu } from './admin-components/menu/create-menu/create-menu';
 
 const routes: Routes = [
 
@@ -24,6 +26,8 @@ const routes: Routes = [
     {path:'category/create',component:CreateCategory},
     {path:'category/update/:id',component:UpdateCategory},
     {path:'menu',component:Menu},
+    {path:'menu/create',component:CreateMenu},
+    {path:'menu/update/:id',component:UpdateMenu},
     {path:'about',component:About}
   ]}
 ];

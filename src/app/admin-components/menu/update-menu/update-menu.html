@@ -1,0 +1,21 @@
+<div class="container">
+  <h2> ürün güncelle</h2>
+
+  <form #form="ngForm" (ngSubmit)="update()">
+    <input type="hidden" name="id" [(ngModel)]="menu.id">
+    <label>ürün adı</label>
+    <input type="text" name="name" [(ngModel)]="menu.name" class="form-control" required />
+    <label>ürün fiyatı</label>
+    <input type="text" name="price" [(ngModel)]="menu.price" class="form-control" required />
+    <label>görsel url</label>
+    <input type="text" name="imageUrl" [(ngModel)]="menu.imageUrl" class="form-control" required />
+    <br />
+    <label>kategori</label>
+    <select name="categoryId" [(ngModel)]="menu.categoryId" class="form-control">
+      @for (item of categories(); track $index) {
+        <option value="{{ item.id }}">{{ item.name }}</option>
+      }
+    </select>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Kaydet</button>
+  </form>
+</div>
