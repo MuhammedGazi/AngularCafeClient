@@ -6,26 +6,30 @@ import { MenuModel } from '../models/menuModel';
   providedIn: 'root',
 })
 export class MenuService {
-  private http=inject(HttpClient);
-  apiUrl="https://localhost:7000/api/menus/";
+  private http = inject(HttpClient);
+  apiUrl = 'https://localhost:7000/api/menus/';
 
-  getAll(){
+  getAll() {
     return this.http.get<MenuModel[]>(this.apiUrl);
   }
 
-  getById(id:number){
-    return this.http.get<MenuModel>(this.apiUrl+id)
+  getLatestFour() {
+    return this.http.get<MenuModel[]>(this.apiUrl+'latestFour');
   }
 
-  create(model:MenuModel){
-    return this.http.post(this.apiUrl,model);
+  getById(id: number) {
+    return this.http.get<MenuModel>(this.apiUrl + id);
   }
 
-  update(id:number,model:MenuModel){
-    return this.http.put(this.apiUrl+id,model);
+  create(model: MenuModel) {
+    return this.http.post(this.apiUrl, model);
   }
 
-  delete(id:number){
-    return this.http.delete(this.apiUrl+id);
+  update(id: number, model: MenuModel) {
+    return this.http.put(this.apiUrl + id, model);
+  }
+
+  delete(id: number) {
+    return this.http.delete(this.apiUrl + id);
   }
 }

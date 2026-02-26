@@ -11,13 +11,15 @@ import { About } from './admin-components/about/about';
 import { CreateCategory } from './admin-components/category/create-category/create-category';
 import { UpdateCategory } from './admin-components/category/update-category/update-category';
 import { CreateMenu } from './admin-components/menu/create-menu/create-menu';
+import { MenuAllUi } from './ui-components/menu-all-ui/menu-all-ui';
 
 const routes: Routes = [
 
   //ui routes
   {path:'',component:UiLayout,children:[
     {path:'',component:Home},
-    {path:'contact',component:Contact}
+    {path:'contact',component:Contact},
+    {path:'menu',component:MenuAllUi}
   ]},
 
   //admin routes
